@@ -24,7 +24,7 @@ import com.example.tasklistbd.ui.viewmodels.TaskViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(tasksViewModel: TaskViewModel = viewModel()) {
+fun MainScreen(tasksViewModel: TaskViewModel = viewModel(factory = TaskViewModel.Factory)) {
     val navController = rememberNavController()
     val uiState by tasksViewModel.mainScreenUiState.collectAsState()
     Scaffold(
